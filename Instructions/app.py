@@ -156,7 +156,7 @@ def start():
         f"On 11/21/2015 the minimum, avg, and max temp was {Start_date_min } {Start_date_avg } {Start_date_max}."
         f"{jsonify(dates_info_df)}"
         f"{jsonify(dates_info_range_df)}"
-
+    )
     #close session
     session.close()
 
