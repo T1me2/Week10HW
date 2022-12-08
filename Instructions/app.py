@@ -142,14 +142,14 @@ def start():
     dates_info = session.query(measurement.date, func.min(measurement.tobs),func.avg(measurement.tobs),\
     func.max(measurement.tobs)).group_by(measurement.date).filter(measurement.date >= start_date).all()
     dates_info_df = pd.DataFrame(dates_info).to_dict( 'records')
-    #above code returns requested information, I cant find where we went over conferting multiple columns for the josonify, it will not let me pass a the dictionary with more than one column.
+    #above code returns requested information, I cant find where we went over converting multiple columns for the josonify, it will not let me pass a the dictionary with more than one column.
 
     #find same info for a range of dates.
     dates_range = session.query(measurement.date, func.min(measurement.tobs),func.avg(measurement.tobs),\
     func.max(measurement.tobs)).group_by(measurement.date).filter(measurement.date >= start_date).\
     filter(measurement.date <= end_date).all()
     dates_info_range_df = pd.DataFrame(dates_range).to_dict( 'records')
-    #above code returns requested information, I cant find where we went over conferting multiple columns for the josonify, it will not let me pass a the dictionary with more than one column.
+    #above code returns requested information, I cant find where we went over converting multiple columns for the josonify, it will not let me pass a the dictionary with more than one column.
 
 
     return (
